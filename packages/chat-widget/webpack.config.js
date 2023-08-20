@@ -46,6 +46,8 @@ module.exports = (_, argv) => ({
       remotes: {},
       exposes: {
         "./Chat": "./src/Chat",
+        "./BrokenChat": "./src/BrokenChat",
+        "./Inbox": "./src/Inbox"
       },
       shared: {
         ...deps,
