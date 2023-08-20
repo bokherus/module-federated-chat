@@ -10,7 +10,8 @@ yarn start
 This will run both the application at the same time locally on port `3000` and `3001`
 
 ## Testing network problems
-Use chrome dev tools to block request to load a specific component
+Use chrome dev tools to block request from loading a specific component
+
 <img width="610" alt="image" src="https://github.com/bokherus/module-federated-chat/assets/9125776/cf17c5d7-e67d-4800-9289-46952787e7d2">
 
 
