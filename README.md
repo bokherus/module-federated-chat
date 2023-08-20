@@ -28,31 +28,8 @@ const Chat = React.lazy(() =>
 );
 ```
 
-while errors from remote component can be wrapped within ErrorBoundary to prevent error from breaking the host page like this
-ErrorBoundary.tsx
-```tsx
-import React, { Component } from "react";
-
-class ErrorBoundary extends Component {
-  state = { hasError: false };
-
-  static getDerivedStateFromError(error: any) {
-    return { hasError: true };
-  }
-
-  render() {
-    if (this.state.hasError) {
-      // Log error to server
-      console.error("Unexpected error within wrapped component");
-      return this.props.fallback;
-    }
-
-    return this.props.children;
-  }
-}
-
-export default ErrorBoundary;
-```
+while errors from remote component can be wrapped within ErrorBoundary to prevent error from breaking the host page like
+https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary and then wrap the remote component with ErrorBoundary
 
 ```tsx
 <ErrorBoundary fallback={<div>Unexpected error</div>}>
