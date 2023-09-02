@@ -1254,12 +1254,28 @@
   "resolved" "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.4.tgz"
   "version" "1.2.4"
 
+"@types/react-dom@^16.7.2":
+  "integrity" "sha512-xC8D280Bf6p0zguJ8g62jcEOKZiUbx9sIe6O3tT/lKfR87A7A6g65q13z6D5QUMIa/6yFPkNhqjF5z/VVZEYqQ=="
+  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-16.9.19.tgz"
+  "version" "16.9.19"
+  dependencies:
+    "@types/react" "^16"
+
 "@types/react-dom@^17.0.2":
   "integrity" "sha512-4pzIjSxDueZZ90F52mU3aPoogkHIoSIDG+oQ+wQK7Cy2B9S+MvOqY0uEA/qawKz381qrEDkvpwyt8Bm31I8sbA=="
   "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-17.0.20.tgz"
   "version" "17.0.20"
   dependencies:
     "@types/react" "^17"
+
+"@types/react@^16", "@types/react@^16.7.2":
+  "integrity" "sha512-Am4pyXMrr6cWWw/TN3oqHtEZl0j+G6Up/O8m65+xF/3ZaUgkv1GAtTPWw4yNRmH0HJXmur6xKCKoMo3rBGynuw=="
+  "resolved" "https://registry.npmjs.org/@types/react/-/react-16.14.46.tgz"
+  "version" "16.14.46"
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    "csstype" "^3.0.2"
 
 "@types/react@^17", "@types/react@^17.0.2":
   "integrity" "sha512-IlgbX/vglDTwrCRgad6fTCzOT+D/5C0xwuvrzfuqfhg9gJrkFqAGADpUFlEtqbrP1IEo9QLSbo41MaFfoIu9Aw=="
@@ -3760,7 +3776,7 @@
     "iconv-lite" "0.4.24"
     "unpipe" "1.0.0"
 
-"react-dom@^16.8.0":
+"react-dom@^16.7.0":
   "integrity" "sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
   "version" "16.14.0"
@@ -3783,7 +3799,7 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
-"react@^16.14.0", "react@^16.8.0":
+"react@^16.14.0", "react@^16.7.0":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   "version" "16.14.0"
