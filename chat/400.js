@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkchat_widget=self.webpackChunkchat_widget||[]).push([[400],{400:(e,t,n)=>{n.r(t),n.d(t,{default:()=>s});var a=n(900),c=n.n(a);const s=function(){return c().createElement("div",{className:"text-4xl font-bold p-5 bg-green-500 text-white"},"Inbox")}}}]);
