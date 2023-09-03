@@ -21,7 +21,7 @@ const App: React.FC = () => (
   <Layout>
     <GalleryView>
       <React.Suspense fallback={<div />}>
-        <Chat />
+        <Chat locale="jp-jp" />
       </React.Suspense>
       <React.Suspense fallback={<div />}>
         <Inbox />

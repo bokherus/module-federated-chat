@@ -8,7 +8,7 @@ const federationConfig = {
   name: "hostApplication",
   filename: "remoteEntry.js",
   remotes: {
-    "chatWidget": "chatWidget@http://localhost:3001/remoteEntry.js",
+    "chatWidget": "chatWidget@https://cdn.jsdelivr.net/gh/bokherus/module-federated-chat@main/chat/remoteEntry.js",
   },
   exposes: {},
   shared: {

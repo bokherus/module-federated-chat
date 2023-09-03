@@ -20,7 +20,7 @@ const App: React.FC = () => {
     <div className="mt-10 text-3xl mx-auto max-w-6xl">
       <h1>Host application with React 16.6.0</h1>
       <React.Suspense fallback={<div />}>
-        <Chat />
+        <Chat locale="th-th" />
       </React.Suspense>
       <React.Suspense fallback={<div />}>
         <Inbox />
