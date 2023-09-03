@@ -1,7 +1,29 @@
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { FederatedTypesPlugin } = require('@module-federation/typescript');
 
 const deps = require("./package.json").dependencies;
+const federationConfig = {
+  name: "hostApplication",
+  filename: "remoteEntry.js",
+  remotes: {
+    "chatWidget": "chatWidget@http://localhost:3001/remoteEntry.js",
+  },
+  exposes: {},
+  shared: {
+    ...deps,
+    react: {
+      singleton: true,
+      requiredVersion: deps.react,
+    },
+    "react-dom": {
+      singleton: true,
+      requiredVersion: deps["react-dom"],
+    },
+  },
+};
+
 module.exports = (_, argv) => ({
   output: {
     publicPath: "http://localhost:3000/",
@@ -40,25 +62,8 @@ module.exports = (_, argv) => ({
   },
 
   plugins: [
-    new ModuleFederationPlugin({
-      name: "hostApplication",
-      filename: "remoteEntry.js",
-      remotes: {
-        "chatWidget": "chatWidget@http://localhost:3001/remoteEntry.js",
-      },
-      exposes: {},
-      shared: {
-        ...deps,
-        react: {
-          singleton: true,
-          requiredVersion: deps.react,
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: deps["react-dom"],
-        },
-      },
-    }),
+    new ModuleFederationPlugin(federationConfig),
+    new FederatedTypesPlugin({ federationConfig }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),

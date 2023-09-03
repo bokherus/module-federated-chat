@@ -1,7 +1,30 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { FederatedTypesPlugin } = require('@module-federation/typescript');
 
 const deps = require("./package.json").dependencies;
+const federationConfig = {
+  name: "chatWidget",
+  filename: "remoteEntry.js",
+  remotes: {},
+  exposes: {
+    "./Chat": "./src/Chat",
+    "./BrokenChat": "./src/BrokenChat",
+    "./Inbox": "./src/Inbox"
+  },
+  shared: {
+    ...deps,
+    react: {
+      singleton: true,
+      requiredVersion: deps.react,
+    },
+    "react-dom": {
+      singleton: true,
+      requiredVersion: deps["react-dom"],
+    },
+  },
+};
+
 module.exports = (_, argv) => ({
   output: {
     publicPath: "http://localhost:3001/",
@@ -40,27 +63,8 @@ module.exports = (_, argv) => ({
   },
 
   plugins: [
-    new ModuleFederationPlugin({
-      name: "chatWidget",
-      filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {
-        "./Chat": "./src/Chat",
-        "./BrokenChat": "./src/BrokenChat",
-        "./Inbox": "./src/Inbox"
-      },
-      shared: {
-        ...deps,
-        react: {
-          singleton: true,
-          requiredVersion: deps.react,
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: deps["react-dom"],
-        },
-      },
-    }),
+    new ModuleFederationPlugin(federationConfig),
+    new FederatedTypesPlugin({ federationConfig }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),

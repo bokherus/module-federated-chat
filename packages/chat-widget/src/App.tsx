@@ -9,7 +9,7 @@ import BrokenChat from "./BrokenChat";
 const App = () => (
   <div className="mt-10 text-3xl mx-auto max-w-6xl">
     <h1>Widget sandbox</h1>
-    <Chat />
+    <Chat locale="en-us"/>
     {/* <BrokenChat /> */}
     <Inbox />
   </div>
